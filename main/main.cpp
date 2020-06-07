@@ -3,6 +3,20 @@
 
 using namespace std;
 
+void criarTabuleiro(char tabuleiro[12][12] ){
+    for(int i=0;i<12;i++){
+        for(int j=0;j<12;j++){
+            if(i == 0 || i == 11){
+                tabuleiro[i][j] = '*';
+            } else if(i == 5 || i == 6){
+                tabuleiro[i][j] = '~';
+            } else if(j == 0 || j == 11){
+                tabuleiro[i][j] = '*';
+            }
+        }
+    }
+}
+
 int main() {
 
     string nomeJogador1, nomeJogador2;
@@ -14,8 +28,10 @@ int main() {
     cin>>nomeJogador1;
     cout<<"Por favor, insira o nome do jogador 2: ";
     cin>>nomeJogador2;
+
+    criarTabuleiro(tabuleiro);
     
-    
+    cout<<tabuleiro[5][1]<<endl;
 
 
 }
