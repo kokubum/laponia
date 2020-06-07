@@ -12,9 +12,23 @@ void criarTabuleiro(char tabuleiro[12][12] ){
                 tabuleiro[i][j] = '~';
             } else if(j == 0 || j == 11){
                 tabuleiro[i][j] = '*';
+            } else {
+                tabuleiro[i][j] = ' ';
             }
         }
     }
+}
+
+void printarTabuleiro(char tabuleiro[12][12] ){
+    for(int i=0;i<12;i++){
+        for(int j=0;j<12;j++){
+            cout<<tabuleiro[i][j];
+            if(j == 11){
+                cout<<endl;
+            }
+        }
+    }
+    cout<<endl;
 }
 
 int main() {
@@ -30,8 +44,7 @@ int main() {
     cin>>nomeJogador2;
 
     criarTabuleiro(tabuleiro);
-    
-    cout<<tabuleiro[5][1]<<endl;
+    printarTabuleiro(tabuleiro);
 
 
 }
