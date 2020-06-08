@@ -69,10 +69,6 @@ void preencherTabuleiro(bool turno, string nomeJogador1, string nomeJogador2, ch
             cout<<nomeJogador2<<", insira a posição do tabuleiro (ex: x,x): ";
         }
         cin>>linha>>virgula>>coluna;
-        
-        //decrementando um valor para que as posicoes correspondam ao da matriz
-        linha--;
-        coluna--;
 
         if(linha <= 0 || linha == 5 || linha == 6 || linha >= 11 || coluna <= 0 || coluna >= 11){
             cout<<"Valor digitado inválido, você perdeu a vez."<<endl;
