@@ -57,6 +57,49 @@ bool sortearJogador(int numeros[], int qtdNumeros, int limite){
     }
 }
 
+void preencherTabuleiro(bool turno, string nomeJogador1, string nomeJogador2, char tabuleiro[12][12]){
+    int qtdPecasJogador1 = 8;
+    int qtdPecasJogador2 = 8;
+    while(qtdPecasJogador1 != 0 || qtdPecasJogador2 != 0){
+        int linha,coluna;
+        char virgula;
+
+        if(turno){
+            cout<<nomeJogador1<<", insira a posição do tabuleiro (ex: x,x): ";
+        } else {
+            cout<<nomeJogador2<<", insira a posição do tabuleiro (ex: x,x): ";
+        }
+        cin>>linha>>virgula>>coluna;
+        
+        //decrementando um valor para que as posicoes correspondam ao da matriz
+        linha--;
+        coluna--;
+
+        if(linha <= 0 || linha == 5 || linha == 6 || linha >= 11 || coluna <= 0 || coluna >= 11){
+            cout<<"Valor digitado inválido, você perdeu a vez."<<endl;
+        } else {
+            if(tabuleiro[linha][coluna] != ' '){
+                cout<<"Nesta posição já existe uma peça, você perdeu a vez."<<endl;
+            }else {
+                if(turno){
+                    tabuleiro[linha][coluna] = '1';
+                    qtdPecasJogador1--;
+                } else {
+                    tabuleiro[linha][coluna] = '2';
+                    qtdPecasJogador2--;
+                }
+            }
+        }
+
+        if(turno){
+            turno = false;
+        } else {
+            turno = true;
+        }
+        printarTabuleiro(tabuleiro);
+    }
+}
+
 int main() {
 
     string nomeJogador1, nomeJogador2;
@@ -89,4 +132,6 @@ int main() {
     } else {
         cout<<nomeJogador2<<" "<<"começa."<<endl;
     }
+
+    preencherTabuleiro(turno, nomeJogador1, nomeJogador2, tabuleiro);
 }
