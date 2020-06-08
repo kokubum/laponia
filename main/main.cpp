@@ -129,4 +129,7 @@ int main() {
     }
 
     preencherTabuleiro(turno, nomeJogador1, nomeJogador2, tabuleiro);
+
+    cout<<"Todas peças colocadas!"<<endl;
+    cout<<"Começa o jogo: "<<endl;
 }
