@@ -133,9 +133,10 @@ void preencherTabuleiro(string jogador,string nomeJogador1,string nomeJogador2,c
 }
 
 bool movimento(int origemX,int origemY,int destinoX,int destinoY,char tabuleiro[][12]){
-  if ((abs(origemX-destinoX)>=1 && abs(origemY-destinoY)>=1) || tabuleiro[destinoX][destinoY]!=' '){
+  if (abs(origemX-destinoX)==abs(origemY-destinoY) || abs(origemX-destinoX)>1 || abs(origemY-destinoY)>1 || tabuleiro[destinoX][destinoY]!=' '){
     return false;
   }
+
   return true;
 }
 
