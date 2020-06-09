@@ -2,7 +2,7 @@
 #include <iomanip>
 #include <string>
 #define TAM 12
-#define QTD_G 1
+#define QTD_G 8
 
 using namespace std;
 
